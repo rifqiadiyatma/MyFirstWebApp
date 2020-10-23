@@ -32,6 +32,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('/index','Helloworld::index');
+$routes->get('/tampel/(:any)/(:num)','Helloworld::tampil/$1/$2');
+$routes->get('/globalvariabel','Helloworld::global');
+$routes->get('/tabel', function(){
+	echo view("mahasiswa/header");
+	echo view("mahasiswa/index");
+	echo view("mahasiswa/footer");
+});
+
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
