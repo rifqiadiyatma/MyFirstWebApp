@@ -30,8 +30,10 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->setDefaultNamespace('App\Controllers');
+$routes->setDefaultMethod('index');
 
+$routes->get('/', 'Home::index');
 $routes->get('/index','Helloworld::index');
 $routes->get('/tampel/(:any)/(:num)','Helloworld::tampil/$1/$2');
 $routes->get('/globalvariabel','Helloworld::global');
